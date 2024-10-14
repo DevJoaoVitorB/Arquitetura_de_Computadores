@@ -187,6 +187,12 @@ main:
 
 # DÉCIMA QUESTÃO!
 
+#	addi $2, $0, 12
+#	syscall
+#	addi $4, $2, -32
+#	addi $2, $0, 11
+#	syscall
+
 # DÉCIMA PRIMEIRA QUESTÃO!
 
 #	addi $2, $0, 5
@@ -294,6 +300,8 @@ main:
 #	syscall
 
 # DÉCIMA QUINTA QUESTÃO!
+
+	
 
 # DÉCIMA SEXTA QUESTÃO!
 
@@ -429,8 +437,4 @@ main:
 #	syscall
 #	addi $2, $0, 1
 #	add $4, $0, $8
-#	syscall	
-	
-	addi $2, $0, 11
-	add $4, $0, ' '
-	syscall
+#	syscall
