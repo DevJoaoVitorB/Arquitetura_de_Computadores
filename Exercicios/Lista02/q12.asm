@@ -33,7 +33,7 @@ media:
 punishment:
 	div $10, $9
 	mflo $9
-	sll $11, $9, 4 # Deslocamento de 4 casas para a Esquerda. Multiçplicar por 16!
+	sll $11, $9, 4 # Deslocamento de 4 casas para a Esquerda. Multiï¿½plicar por 16!
 	sll $12, $9, 2
 	sub $12, $11, $12
 	sll $11, $9, 1
@@ -72,6 +72,4 @@ below:
 	syscall
 end:
 	addi $2, $0, 10 # Fim do Algoritimo
-	syscall 
-	
-	
+	syscall

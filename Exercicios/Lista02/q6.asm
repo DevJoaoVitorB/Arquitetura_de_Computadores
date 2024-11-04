@@ -77,16 +77,14 @@ contributionV:
 	syscall
 	j end
 verificationV:
-	slt $12, $11, $9 # True3
-	beq $12, $0, true
-	add $4, $0, 'N' # False7
+	slt $12, $9, $11 # True3
+	beq $12, $0, false
+	add $4, $0, 'S' # False7
 	syscall
 	j end
-true:
-	add $4, $0, 'S' # True4
+false:
+	add $4, $0, 'N' # True4
 	syscall
 end:
 	addi $2, $0, 10 # Fim do Algoritimo
 	syscall
-	
-	

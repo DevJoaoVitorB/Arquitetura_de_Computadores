@@ -57,4 +57,3 @@ restExact:
 end:
 	addi $2, $0, 10 # Fim do Algoritimo
 	syscall
-	
