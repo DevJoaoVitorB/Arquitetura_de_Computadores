@@ -2,73 +2,65 @@
 main:
 	addi $2, $0, 5 # Ler um Inteiro!
 	syscall
-	add $8, $0, $2
+	add $8, $0, $2 # q
 	addi $2, $0, 5
 	syscall
-	add $9, $0, $2
+	add $9, $0, $2 # m
 	addi $2, $0, 5
 	syscall
 	add $10, $0, $2
 	addi $2, $0, 11 # Printar um Caracter!
-part1A:
-	addi $11, $0, 12
-	sub $11, $11, $9
-	addi $12, $0, 10
+part1:
+	addi $11, $9, 1
+	sll $12, $11, 4 # Deslocamento de 4 casas para a Esquerda. Multiplicar por 16!
+	sll $13, $11, 1 # Deslocamento de 1 casa para a Esquerda. Multiplicar por 2!
+	sub $12, $12, $13
+	sub $11, $12, $11
+	addi $12, $0, 5
 	div $11, $12
 	mflo $11
-part2B:
-	sub $12, $10, $11
-part3C:
-	sll $13, $11, 4 # Deslocamento de 4 casas para a Esquerda. Multiplicar por 16!
-	sll $14, $11, 2 # Deslocamento de 2 casas para a Esquerda. Multiplicar por 4!
-	sub $13, $13, $14
-	add $13, $9, $13
-part4D:
-	addi $14, $0, 100
+part2:
+	addi $12, $0, 100
+	div $10, $12
+	mflo $13 # J
+	mfhi $12 # K
+part3:
+	addi $14, $0, 4
 	div $12, $14
 	mflo $14
-part5E:
+part4:
 	addi $15, $0, 4
-	div $14, $15
+	div $13, $15
 	mflo $15
-part6F:
-	addi $16, $0, 2
-	sub $16, $16, $14
-	add $16, $16, $15
-part7G:
-	addi $17, $0, 36525
-	addi $18, $0, 100
-	mul $19, $17, $12
-	div $19, $18
-	mflo $17
+part5:
+	sll $16, $13, 2 # Deslocamento de 2 casas para a Esquerda. Multiplicar por 4!
+	add $16, $16, $13
+part6:
+	add $17, $8, $11
+	add $17, $17, $12
+	add $17, $17, $14
+	add $17, $17, $15
+	add $17, $17, $16
+	addi $18, $0, 7
+part7:
+	div $17, $18
 	mfhi $18
-part8H:
-	addi $19, $0, 306001
-	addi $20, $0, 10000
-	addi $21, $13, 1
-	mul $21, $19, $21
-	div $21, $20
-	mflo $19
-	mfhi $20
-part9I:
-	
-part10J:
-	mfhi $22
+	mfhi $18 # h
 certification:
-	addi $23, $0, 0
-	beq $22, $23, saturday # $22 = $23
-	addi $23, $0, 1 # False1
-	beq $22, $23, sunday
-	addi $23, $0, 2 # False2
-	beq $22, $23, monday
-	addi $23, $0, 3 # False3
-	beq $22, $23, tuesday
-	addi $23, $0, 4 # False4
-	beq $22, $23, wednesday
-	addi $23, $0, 5 # False5
-	beq $22, $23, thursday
-	addi $23, $0, 6 # False6
-	beq $22, $23, friday
+	addi $19, $0, 0
+	beq $18, $19, saturday # $18 = $19
+	addi $19, $0, 1 # False1
+	beq $18, $19, sunday
+	addi $19, $0, 2 # False2
+	beq $18, $19, monday
+	addi $19, $0, 3 # False3
+	beq $18, $19, tuesday
+	addi $19, $0, 4 # False4
+	beq $18, $19, wednesday
+	addi $19, $0, 5 # False5
+	beq $18, $19, thursday
+	addi $19, $0, 6 # False6
+	beq $18, $19, friday
 	j invalid # Pular para invalid
 monday:
 	addi $4, $0, 'M' # True1
@@ -144,7 +136,3 @@ invalid:
 end:
 	addi $2, $0, 10 # Fim do Algoritimo
 	syscall
-	
-
-
-
