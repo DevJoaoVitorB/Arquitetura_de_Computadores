@@ -27,7 +27,7 @@ loop:
 	addi $4, $0, ' '
 	syscall
 	addi $9, $9, 1
-	j loop
+	j loop2
 breakline:
 	addi $4, $0, '\n'
 	syscall
@@ -50,8 +50,6 @@ breakline2:
 	syscall
 	add $9, $0, $7
 	addi $8, $8, 1
-	addi $2, $0, 10
-	syscall
 	bne $8, $7 loop2
 endi:
 	jr $31
