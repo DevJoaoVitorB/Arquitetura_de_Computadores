@@ -23,7 +23,7 @@ end:
 # A a B
 # Entradas: $7, $6 (A, B)
 # Saidas: $3
-# Registradores Sujos: 
+# Registradores Sujos: $2, $8, $9
 
 primo:
 	addi $8, $0, 1
